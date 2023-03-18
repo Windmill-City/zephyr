@@ -3,22 +3,14 @@
 # Copyright (c) 2017, embedjournal.com
 # SPDX-License-Identifier: Apache-2.0
 
-if SOC_STM32F103XB || SOC_STM32F103X8
-
 config SOC
-	default "stm32f103xb"
+	default "stm32f103x4-6" if SOC_STM32F103X6
+	default "stm32f103x8-b" if SOC_STM32F103XB
+	default "stm32f103xc-d-e" if SOC_STM32F103XE
+	default "stm32f103xf-g" if SOC_STM32F103XG
 
 config NUM_IRQS
-	default 43
-
-endif # SOC_STM32F103XB || SOC_STM32F103X8
-
-if SOC_STM32F103XE
-
-config SOC
-	default "stm32f103xe"
-
-config NUM_IRQS
-	default 60
-
-endif # SOC_STM32F103XE
+	default 60 if SOC_STM32F103X6
+	default 60 if SOC_STM32F103XB
+	default 60 if SOC_STM32F103XE
+	default 60 if SOC_STM32F103XG
