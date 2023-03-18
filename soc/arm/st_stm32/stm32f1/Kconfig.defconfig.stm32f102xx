@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 
 config SOC
-	default "stm32f100x4-6" if SOC_STM32F100X6
-	default "stm32f100x8-b" if SOC_STM32F100XB
+	default "stm32f100x6" if SOC_STM32F100X6
+	default "stm32f100xb" if SOC_STM32F100XB
 
 config NUM_IRQS
 	default 60 if SOC_STM32F100X6
